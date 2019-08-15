@@ -21,7 +21,7 @@ class BlogCard extends React.Component<IProps, {}> {
                 <CardMedia
                   image={this.props.imageUrl}
                   title= {this.props.title}
-                  style = {{minHeight: "300px"}}
+                  style = {{minHeight: "300px",maxWidth:"500px"}}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
