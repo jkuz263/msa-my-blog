@@ -23,15 +23,30 @@ class BlogDialog extends React.Component<IProps, {}> {
                     <DialogTitle id="form-dialog-title">Blog Entry</DialogTitle>
                     <DialogContent>
                     <DialogContentText>
-                        To subscribe to this website, please enter your email address here. We will send updates
-                        occasionally.
+                        Blog Content
                     </DialogContentText>
                     <TextField
                         autoFocus
                         margin="dense"
                         id="name"
-                        label="Email Address"
-                        type="email"
+                        label="Title"
+                        type="title"
+                        fullWidth
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="content"
+                        label="Content"
+                        type="content"
+                        fullWidth
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="image"
+                        label="ImageUrl"
+                        type="url"
                         fullWidth
                     />
                     </DialogContent>
