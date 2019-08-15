@@ -14,11 +14,8 @@ class Header extends React.Component<{}, {}> {
             <div>
                 <AppBar position="static">
                     <Toolbar>
-                    <IconButton style={{marginRight: "10px"}} edge="start"  color="inherit" aria-label="menu">
-                        <Menu />
-                    </IconButton>
                     <Typography variant="h6" >
-                        News
+                        My Blog
                     </Typography>
                     <Button color="inherit">Login</Button>
                     </Toolbar>
