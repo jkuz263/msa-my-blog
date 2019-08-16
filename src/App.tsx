@@ -4,7 +4,8 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header'
 import MainContent from './Components/MainContent'
-
+import {FacebookShareButton,TwitterShareButton,RedditShareButton} from 'react-share';
+import {FacebookIcon,TwitterIcon,RedditIcon} from 'react-share';
 interface IState {
   updateVideoList: any,
   player: any,
@@ -61,8 +62,10 @@ return (<div>
           {(authenticated) ?
               <div>
                   <Header />
+                  <FacebookShareButton url ="https://localhost:44331/"><FacebookIcon/></FacebookShareButton>
+                  <TwitterShareButton url ="https://localhost:44331/"><TwitterIcon/></TwitterShareButton>
+                  <RedditShareButton url = "https://localhost:44331/"><RedditIcon></RedditIcon></RedditShareButton>
                   <MainContent />
-                  
               </div>
               : ""}
 
