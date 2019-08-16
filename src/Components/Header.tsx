@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/icons/Menu';
+import logoimg from './logo/bloglogov1.png'; 
 
     
 class Header extends React.Component<{}, {}> {
@@ -14,10 +15,13 @@ class Header extends React.Component<{}, {}> {
                 <AppBar position="static">
                     <Toolbar>
                     <Typography variant="h6" >
-                        My Blog
+                        My Blog 
+                        <img src = {logoimg} alt="logo" style ={{maxHeight: "30px" , maxWidth: "60px"}}/>
+                        
                     </Typography>
-                    <div id="google_translate_element"></div>
+                    
                     </Toolbar>
+                    <div id="google_translate_element"></div>
                 </AppBar>
             </div>
         )

@@ -27,6 +27,7 @@ class MainContent extends React.Component<{}, IState> {
     componentDidMount() {
         this.getBlogEntry();
     }
+    
     public getBlogEntry = () =>{
         fetch ("https://localhost:44331/api/BlogEntries",{method: 'GET'})
         .then((response: any) => {
