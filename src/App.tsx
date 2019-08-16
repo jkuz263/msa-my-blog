@@ -60,11 +60,13 @@ return (<div>
             : ""}
 
           {(authenticated) ?
-              <div>
+              <div> 
                   <Header />
-                  <FacebookShareButton url ="https://localhost:44331/"><FacebookIcon/></FacebookShareButton>
+                  <div style = {{display:"flex"}}>
+                  <FacebookShareButton url ="https://localhost:44331/" ><FacebookIcon/></FacebookShareButton>
                   <TwitterShareButton url ="https://localhost:44331/"><TwitterIcon/></TwitterShareButton>
                   <RedditShareButton url = "https://localhost:44331/"><RedditIcon></RedditIcon></RedditShareButton>
+                  </div>
                   <MainContent />
               </div>
               : ""}
