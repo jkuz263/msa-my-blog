@@ -29,7 +29,7 @@ class BlogCard extends React.Component<IProps, IState> {
     }
   }
 public delete = () => {
-  fetch("https://localhost:44331/api/BlogEntries/" + this.props.id,{
+  fetch("https://myblog-api.azurewebsites.net/index.html" + this.props.id,{
     method: 'DELETE'}).then((response: any) => this.props.refresh());
 }
   public toggleOpen = () => {

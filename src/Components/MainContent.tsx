@@ -29,7 +29,7 @@ class MainContent extends React.Component<{}, IState> {
     }
     
     public getBlogEntry = () =>{
-        fetch ("https://localhost:44331/api/BlogEntries",{method: 'GET'})
+        fetch ("https://myblog-api.azurewebsites.net/index.html",{method: 'GET'})
         .then((response: any) => {
             // console.log(response)
             return response.json()

@@ -27,7 +27,7 @@ class BlogDialog extends React.Component<IProps, {}> {
             description: descrpElement.value,
             imageUrl: urlElement.value
         }
-        fetch ("https://localhost:44331/api/BlogEntries",{
+        fetch ("https://myblog-api.azurewebsites.net/index.html",{
             body: JSON.stringify(table),
             headers:{
                 Accept: "text/plain",

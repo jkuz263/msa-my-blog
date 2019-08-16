@@ -33,7 +33,7 @@ class BlogDialog extends React.Component<IProps, {}> {
             description: descrpElement.value,
             imageUrl: urlElement.value
         }
-        fetch ("https://localhost:44331/api/BlogEntries/" + this.props.id,{
+        fetch ("https://myblog-api.azurewebsites.net/index.html" + this.props.id,{
             body: JSON.stringify(table),
             headers:{
                 Accept: "text/plain",
