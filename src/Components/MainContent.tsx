@@ -7,25 +7,13 @@ interface IState {
     open: boolean
 }
 
+
 class MainContent extends React.Component<{}, IState> {
     constructor(props: any) {
         super(props);
 
         this.state = {
-            blogEntries: [{
-                title: "yoyo",
-                content: "potato",
-                imageUrl: "https://i.imgur.com/F2pWRya.jpg"
-            },{
-                title: "b obo",
-                content: "potato",
-                imageUrl: "https://i.imgur.com/F2pWRya.jpg"
-            }, {
-                title: "dodo",
-                content: "potato",
-                imageUrl: "https://i.imgur.com/F2pWRya.jpg"
-            }
-        ],
+            blogEntries: [],
         open: false 
     };
     }
@@ -36,6 +24,21 @@ class MainContent extends React.Component<{}, IState> {
             })
         })
     }
+    componentDidMount() {
+        this.getBlogEntry();
+    }
+    public getBlogEntry = () =>{
+        fetch ("https://localhost:44331/api/BlogEntries",{method: 'GET'})
+        .then((response: any) => {
+            // console.log(response)
+            return response.json()
+        }).then((response: any) => {
+            // console.log(response);
+            this.setState({
+                blogEntries: response
+            });
+        })
+    }
 
     public render() {
         return (
@@ -43,11 +46,10 @@ class MainContent extends React.Component<{}, IState> {
                 <Button onClick={this.toggleDialog}> Create a blog entry </Button>
                 {
                     this.state.blogEntries.map((blogEntry: any) => {
-                        return <BlogCard title = {blogEntry.title} content = {blogEntry.content} imageUrl = {blogEntry.imageUrl} />
+                        return <BlogCard refresh = {this.getBlogEntry} id = {blogEntry.entryId} title = {blogEntry.title} description = {blogEntry.description} imageUrl = {blogEntry.imageUrl} />
                     })
                 }
-
-                <BlogDialog open = {this.state.open} close = {this.toggleDialog} />
+                <BlogDialog refresh = {this.getBlogEntry} open = {this.state.open} close = {this.toggleDialog} />
             </React.Fragment>
         )
     }

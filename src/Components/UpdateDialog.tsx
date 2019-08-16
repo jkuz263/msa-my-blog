@@ -9,6 +9,10 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 interface IProps{
     open: boolean,
     close: any,
+    currentTitle: string,
+    currentDescription: string,
+    currentUrl: string,
+    id: number,
     refresh: any
 }
 
@@ -17,25 +21,27 @@ class BlogDialog extends React.Component<IProps, {}> {
     constructor(props: any){
         super(props);
     } 
+    
     public createBlogEntry = () =>{
         const titleElement = document.getElementById("name") as HTMLInputElement;
         const descrpElement = document.getElementById("content") as HTMLInputElement;
         const urlElement = document.getElementById("image") as HTMLInputElement;
 
         const table = { 
+            entryId: this.props.id,
             title: titleElement.value,
             description: descrpElement.value,
             imageUrl: urlElement.value
         }
-        fetch ("https://localhost:44331/api/BlogEntries",{
+        fetch ("https://localhost:44331/api/BlogEntries/" + this.props.id,{
             body: JSON.stringify(table),
             headers:{
                 Accept: "text/plain",
                 "Content-Type":"application/json"
             },
-            method: 'POST'}) 
+            method: 'PUT'}) 
         .then ((response: any)=>{
-            this.props.close()
+            this.props.close();
             this.props.refresh();
         });
 
@@ -54,6 +60,7 @@ class BlogDialog extends React.Component<IProps, {}> {
                         margin="dense"
                         id="name"
                         label="Title"
+                        defaultValue = {this.props.currentTitle}
                         type="title"
                         fullWidth
                     />
@@ -61,6 +68,7 @@ class BlogDialog extends React.Component<IProps, {}> {
                         autoFocus
                         margin="dense"
                         id="content"
+                        defaultValue = {this.props.currentDescription}
                         label="Content"
                         type="content"
                         fullWidth
@@ -69,6 +77,7 @@ class BlogDialog extends React.Component<IProps, {}> {
                         autoFocus
                         margin="dense"
                         id="image"
+                        defaultValue = {this.props.currentUrl}
                         label="ImageUrl"
                         type="url"
                         fullWidth
@@ -79,7 +88,7 @@ class BlogDialog extends React.Component<IProps, {}> {
                         Cancel
                     </Button>
                     <Button onClick={this.createBlogEntry} color="primary">
-                        Create
+                        Update
                     </Button>
                     </DialogActions>
                 </Dialog>
