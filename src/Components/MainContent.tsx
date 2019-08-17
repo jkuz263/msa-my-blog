@@ -31,10 +31,10 @@ class MainContent extends React.Component<{}, IState> {
     public getBlogEntry = () =>{
         fetch ("https://myblog-api.azurewebsites.net/api/BlogEntries",{method: 'GET'})
         .then((response: any) => {
-            // console.log(response)
+             console.log(response)
             return response.json()
         }).then((response: any) => {
-            // console.log(response);
+             console.log(response);
             this.setState({
                 blogEntries: response
             });
