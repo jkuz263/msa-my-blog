@@ -29,7 +29,7 @@ class BlogCard extends React.Component<IProps, IState> {
     }
   }
 public delete = () => {
-  fetch("https://myblog-api.azurewebsites.net/index.html" + this.props.id,{
+  fetch("https://myblog-api.azurewebsites.net/api/BlogEntries" + this.props.id,{
     method: 'DELETE'}).then((response: any) => this.props.refresh());
 }
   public toggleOpen = () => {
@@ -43,7 +43,7 @@ public delete = () => {
                 <CardMedia
                   image={this.props.imageUrl}
                   title= {this.props.title}
-                  style = {{minHeight: "300px",maxWidth:"500px"}}
+                  style = {{minHeight: "350px",maxWidth:"400px"}}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
