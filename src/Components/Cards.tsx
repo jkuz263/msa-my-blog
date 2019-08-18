@@ -38,7 +38,7 @@ public delete = () => {
     public render(){
         return (
           <React.Fragment>
-            <Card style={{ maxWidth: "50%", display:"block"}}>
+            <Card style={{ width:"49%", display:"inline-block"}}>
               <CardActionArea>
                 <CardMedia
                   image={this.props.imageUrl}

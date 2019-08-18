@@ -44,7 +44,7 @@ class MainContent extends React.Component<{}, IState> {
     public render() {
         return (
             <React.Fragment>
-                <Button onClick={this.toggleDialog}> Create a blog entry </Button>
+                <Button onClick={this.toggleDialog} style = {{display:"block"}}> Create a blog entry </Button>
                 {
                     this.state.blogEntries.map((blogEntry: any) => {
                         return <BlogCard refresh = {this.getBlogEntry} id = {blogEntry.entryId} title = {blogEntry.title} description = {blogEntry.description} imageUrl = {blogEntry.imageUrl} />

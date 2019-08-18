@@ -48,7 +48,7 @@ class BlogDialog extends React.Component<IProps, {}> {
     } 
     public render() {
         return (
-            <div>
+            <React.Fragment>
                 <Dialog open={this.props.open} onClose={this.props.close} aria-labelledby="form-dialog-title">
                     <DialogTitle id="form-dialog-title">Blog Entry</DialogTitle>
                     <DialogContent>
@@ -92,7 +92,7 @@ class BlogDialog extends React.Component<IProps, {}> {
                     </Button>
                     </DialogActions>
                 </Dialog>
-            </div>
+            </React.Fragment>
         )
     }
 }
