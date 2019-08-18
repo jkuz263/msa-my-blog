@@ -43,7 +43,7 @@ public delete = () => {
                 <CardMedia
                   image={this.props.imageUrl}
                   title= {this.props.title}
-                  style = {{minHeight: "350px",maxWidth:"400px"}}
+                  style = {{height: "350px",width:"auto"}}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
