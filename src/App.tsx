@@ -63,9 +63,9 @@ return (<div>
               <div> 
                   <Header />
                   <div style = {{display:"flex"}}>
-                  <FacebookShareButton url ="https://localhost:44331/" ><FacebookIcon/></FacebookShareButton>
-                  <TwitterShareButton url ="https://localhost:44331/"><TwitterIcon/></TwitterShareButton>
-                  <RedditShareButton url = "https://localhost:44331/"><RedditIcon></RedditIcon></RedditShareButton>
+                  <FacebookShareButton url ="https://my-blogfrontend.azurewebsites.net/" ><FacebookIcon/></FacebookShareButton>
+                  <TwitterShareButton url ="https://my-blogfrontend.azurewebsites.net/"><TwitterIcon/></TwitterShareButton>
+                  <RedditShareButton url = "https://my-blogfrontend.azurewebsites.net/"><RedditIcon></RedditIcon></RedditShareButton>
                   </div>
                   <MainContent />
               </div>
